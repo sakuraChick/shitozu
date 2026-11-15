@@ -1,0 +1,41 @@
+.about-intro {
+  padding-block: clamp(72px,12vw,144px) 64px;
+}
+
+.about-intro .page-intro {
+  max-width: 620px;
+  margin-top: 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+  padding-bottom: 100px;
+}
+
+.about-card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface);
+}
+
+.about-card h2 {
+  margin: 0 0 16px;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.about-card>p:not(.eyebrow) {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+@media(max-width:760px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,150 @@
+:root {
+  color-scheme: dark;
+  --bg: #111315;
+  --surface: #191c1f;
+  --text: #f2f0eb;
+  --muted: #a5a8a9;
+  --accent: #c5a77a;
+  --border: rgba(255,255,255,.1);
+  font-family: "Chocolate Classical Sans", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.site-header {
+  min-height: 76px;
+  padding: 0 clamp(20px,6vw,96px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.site-brand span {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .2em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px,3vw,42px);
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.site-nav a:hover,.site-nav a[aria-current=page] {
+  color: var(--text);
+}
+
+.site-nav .nav-login {
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+}
+
+.page-shell {
+  width: min(1120px,calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+}
+
+.site-footer {
+  padding: 24px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(34px,5vw,56px);
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+
+.page-intro {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+@media(max-width:700px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 16px;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .site-nav a {
+    font-size: 12px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    transition-duration: .01ms!important;
+  }
+}
